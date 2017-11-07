@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @api_book.name %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @api_book.author %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @api_book.price %>
+</p>
+
+<%= link_to 'Edit', edit_api_book_path(@api_book) %> |
+<%= link_to 'Back', api_books_path %>

@@ -1,0 +1,52 @@
+<div class="row mb-10">
+  <div class="col-xs-12">
+    <a href="/#/books">
+      << Go Back
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <h2> Book Detail </h2>
+  <form (ngSubmit)="onSubmit()" class="form-horizontal" [ngFormModel]="form">
+    <div class="col-xs-12 text-right">
+      <span [hidden]="form.valid">
+        <label class="label label-danger mr-5">Invalid</label>
+      </span>
+      <button type="submit" class="btn btn-default" [disabled]="!form.valid">
+        Create
+      </button>
+    </div>
+
+    <book-from [book]="product" [form]="form"></book-from>
+
+  </form>
+</div>
+
+<div class="form-group">
+  <label class="col-xs-2 control-label">Id</label>
+  <div class="col-xs-10">
+    <p class="form-control-static">{{book.id}}</p>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-xs-2 control-label">Name</label>
+  <div class="col-xs-10">
+    <input type="text" class="form-control"
+    [(ngModel)]="book.name" [ngFormControl]="form.controls['name']">
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-xs-2 control-label">Author</label>
+  <div class="col-xs-10">
+    <input type="text" class="form-control"
+    [(ngModel)]="book.author" [ngFormControl]="form.controls['author']">
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-xs-2 control-label">Price</label>
+  <div class="col-xs-10">
+    <input type="text" class="form-control"
+    [(ngModel)]="book.price" [ngFormControl]="form.controls['price']">
+  </div>
+</div>
